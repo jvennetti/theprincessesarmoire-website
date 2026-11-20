@@ -1,5 +1,5 @@
 {
-  // The Princesses Armoire. Cloudflare publishes this repository on every push to main (Workers Builds).
+  // The Princesses Armoire. Publish with: npx wrangler deploy (see CLAUDE.md).
   "name": "theprincessesarmoire",
   "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
