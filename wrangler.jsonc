@@ -1,0 +1,28 @@
+{
+  // The Princesses Armoire. Cloudflare publishes this repository on every push to main (Workers Builds).
+  "name": "theprincessesarmoire",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  // Sends form messages. FROM_EMAIL must be on a domain with Email Routing turned on.
+  // TO_EMAIL is a secret (npx wrangler secret put TO_EMAIL), never written in this file: her inbox address
+  // contains her last name, which must stay private. It must be a verified Email Routing destination.
+  "send_email": [{ "name": "EMAIL" }],
+  "vars": {
+    "FROM_EMAIL": "website@theprincessesarmoire.com",
+    // Shown as the To: address so Gmail replies go out from melinda@ (delivery still goes to TO_EMAIL).
+    "SHOP_EMAIL": "melinda@theprincessesarmoire.com"
+  },
+  // Melinda's Cloudflare account (the zone lives here too).
+  "account_id": "45bd8dffb91bcf351d7a0ffb9e647dde",
+  "routes": [
+    { "pattern": "theprincessesarmoire.com", "custom_domain": true },
+    { "pattern": "www.theprincessesarmoire.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

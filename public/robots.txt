@@ -1,0 +1,6 @@
+# The Princesses Armoire. Search engines and AI assistants are welcome to read the whole site.
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://theprincessesarmoire.com/sitemap.xml
